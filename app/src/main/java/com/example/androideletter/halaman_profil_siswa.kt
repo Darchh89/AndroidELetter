@@ -7,47 +7,34 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.google.android.material.card.MaterialCardView
 
-class halaman_beranda_siswa : AppCompatActivity() {
+class halaman_profil_siswa : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.halaman_beranda_siswa)
+        setContentView(R.layout.halaman_profil_siswa)
 
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
         windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
-        // Deklarasi tombol navigasi bawah
+        // LOGIKA NAVIGASI
+        val navBeranda = findViewById<LinearLayout>(R.id.nav_beranda)
         val navPanduan = findViewById<LinearLayout>(R.id.nav_panduan)
         val navRiwayat = findViewById<LinearLayout>(R.id.nav_riwayat)
-        val navProfil = findViewById<LinearLayout>(R.id.nav_profil)
 
-        // Deklarasi Card di tengah halaman
-        val cardLihatSurat = findViewById<MaterialCardView>(R.id.card_lihat_surat)
-        val cardBuatSurat = findViewById<MaterialCardView>(R.id.card_buat_surat)
-
-        // Klik "Lihat Surat" atau "Buat Surat" mengarah ke halaman_buat_surat_siswa
-        cardLihatSurat.setOnClickListener {
-            startActivity(Intent(this, halaman_buat_surat_siswa::class.java))
+        navBeranda.setOnClickListener {
+            finish()
         }
 
-        cardBuatSurat.setOnClickListener {
-            startActivity(Intent(this, halaman_buat_surat_siswa::class.java))
-        }
-
-        // Navigasi bawah
         navPanduan.setOnClickListener {
             startActivity(Intent(this, halaman_panduan_siswa::class.java))
+            finish()
         }
 
         navRiwayat.setOnClickListener {
             startActivity(Intent(this, halaman_riwayat_siswa::class.java))
-        }
-
-        navProfil.setOnClickListener {
-            startActivity(Intent(this, halaman_profil_siswa::class.java))
+            finish()
         }
     }
 }
