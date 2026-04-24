@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidELetter">
         <activity
+            android:name=".pop_up_login_guru"
+            android:exported="false" />
+        <activity
+            android:name=".login_guru"
+            android:exported="false" />
+        <activity
+            android:name=".daftar_guru"
+            android:exported="false" />
+        <activity
+            android:name=".ubah_kata_sandi"
+            android:exported="false" />
+        <activity
+            android:name=".verifikasi_otp"
+            android:exported="false" />
+        <activity
+            android:name=".halaman_otp"
+            android:exported="false" />
+        <activity
             android:name=".halaman_panduan_siswa"
             android:exported="false" />
         <activity

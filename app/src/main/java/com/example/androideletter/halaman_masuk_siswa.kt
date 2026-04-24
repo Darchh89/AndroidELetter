@@ -24,8 +24,9 @@ class halaman_masuk_siswa : AppCompatActivity() {
         val etPassword = findViewById<EditText>(R.id.et_password)
         val btnMasuk = findViewById<MaterialButton>(R.id.btn_masuk)
         val tvDaftar = findViewById<TextView>(R.id.tv_daftar)
+        val tvLupaSandi = findViewById<TextView>(R.id.tv_lupa_sandi)
         val ivTogglePassword = findViewById<ImageView>(R.id.iv_toggle_password)
-        val btnBack = findViewById<LinearLayout>(R.id.btn_back) // Tombol Kembali
+        val btnBack = findViewById<LinearLayout>(R.id.btn_back)
 
         // Logika Tombol Kembali
         btnBack.setOnClickListener {
@@ -46,6 +47,14 @@ class halaman_masuk_siswa : AppCompatActivity() {
             }
             etPassword.setSelection(etPassword.text.length)
         }
+
+        // --- UPDATE LOGIKA LUPA SANDI ---
+        tvLupaSandi.setOnClickListener {
+            // Kita arahkan ke Halaman Lupa Sandi (Input Email) dulu
+            val intent = Intent(this, halaman_otp::class.java)
+            startActivity(intent)
+        }
+        // -------------------------------
 
         btnMasuk.setOnClickListener {
             val inputId = etId.text.toString()

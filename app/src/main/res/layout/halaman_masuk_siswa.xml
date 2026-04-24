@@ -156,8 +156,10 @@
             android:text="Lupa Kata Sandi?"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_masuk"
             android:layout_width="match_parent"
