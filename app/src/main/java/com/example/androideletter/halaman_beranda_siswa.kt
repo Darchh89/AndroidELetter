@@ -15,6 +15,7 @@ class halaman_beranda_siswa : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.halaman_beranda_siswa)
 
+        // Hilangkan Navbar Bawaan HP
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
         windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
@@ -28,11 +29,12 @@ class halaman_beranda_siswa : AppCompatActivity() {
         val cardLihatSurat = findViewById<MaterialCardView>(R.id.card_lihat_surat)
         val cardBuatSurat = findViewById<MaterialCardView>(R.id.card_buat_surat)
 
-        // Klik "Lihat Surat" atau "Buat Surat" mengarah ke halaman_buat_surat_siswa
+        // Klik "Lihat Surat" mengarah ke menu pilihan lihat surat
         cardLihatSurat.setOnClickListener {
-            startActivity(Intent(this, halaman_buat_surat_siswa::class.java))
+            startActivity(Intent(this, halaman_lihat_surat_siswa::class.java))
         }
 
+        // Klik "Buat Surat" mengarah ke menu pilihan pembuatan surat
         cardBuatSurat.setOnClickListener {
             startActivity(Intent(this, halaman_buat_surat_siswa::class.java))
         }
